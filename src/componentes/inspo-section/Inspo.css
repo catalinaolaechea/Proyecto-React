@@ -1,0 +1,167 @@
+
+/* Estilos generales */
+h2{
+  font-weight: 30px;
+  font-size: 35px;
+}
+
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top:50px;
+  font-family: Poppins,sans-serif;
+  padding-bottom: 50px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.gallery-item {
+  position: relative;
+  width: 350px;
+  overflow: hidden; /* Oculta cualquier contenido que sobresalga */
+  margin: 10px;
+  transition: transform 0.3s ease-in-out;
+  font-family: Poppins,sans-serif;
+  font-size: 1.2rem;
+}
+
+.gallery-item:hover img {
+  transform: scale(0.9); /* Reduce el tamaño de la imagen al pasar el mouse */
+}
+
+.gallery-item:hover .gallery-description {
+  opacity: 1; 
+  bottom: 0; 
+}
+
+/* Estilo de las imágenes */
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-in-out; /* Transición de la imagen */
+}
+
+
+/* Descripción oculta por defecto */
+.gallery-description {
+  position: absolute;
+  bottom: -40px; /* Está oculta fuera de la vista inicialmente */
+  left: 0;
+  right: 0;
+  background-color: #2e7c66;
+  color: white;
+  padding: 30px;
+  opacity: 0; /* Se mantiene oculta hasta el hover */
+  transition: opacity 0.3s ease, bottom 0.3s ease; /* Hace que la descripción se desplace y sea visible */
+}
+
+.read-more-btn {
+  margin-top: 10px;
+  background-color: #fec217;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: none; 
+}
+
+.gallery-item:hover .read-more-btn {
+  display: block; 
+}
+
+.read-more-btn:hover {
+  background-color: #f1ffa0; 
+}
+
+
+/* Estilo para el contenedor de la barra de búsqueda */
+
+.search-container {
+  margin-top: 20px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+h3{
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.search-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 20%;
+}
+
+.search-results {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.error-message {
+  color: #dc2626;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.search-results .gallery {
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+h4{
+  font-family: Poppins,sans-serif;
+  font-size: 20px;
+}
+
+.search-results p {
+  font-family: Poppins,sans-serif;
+  font-size: 14px;
+  margin: 0;
+}
+
+
+
+@media (max-width:426px) {
+  .gallery-description{
+    padding: 5px;
+    font-size: 13px;
+  }
+
+  .read-more-btn{
+    padding: 2px 4px;
+    border-radius: 2px;
+    margin-top: 5px;
+    font-size: 11px;
+  }
+
+  .search-container{
+    width: 80%;
+  }
+
+  .search-input{
+    width: 70%;
+  }
+
+}
+
+@media (min-width:768px) {
+  .search-results .gallery {
+    gap: 10px;
+    padding: 0%;
+  }
+}
